@@ -56,6 +56,7 @@ class App
   def select_name
     puts "What is your name?"
     @user_name = gets.strip
+    puts "Why hello there #{@user_name}!"
   end
 
   def select_money
@@ -86,7 +87,7 @@ class App
   end
 
   def display_order
-    puts "Okay! Here's your order"
+    puts "Okay #{@user_name}! Here's your order"
     puts @user_entree.print_item
     puts @user_side_dish1.print_item
     puts @user_side_dish2.print_item
