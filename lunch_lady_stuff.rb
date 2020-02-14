@@ -98,6 +98,14 @@ class App
     sum=@user_entree.price+@user_side_dish1.price+@user_side_dish2.price
   end
 
+  def lacking_funds
+    if @user_money < price_total
+      puts "Insufficient funds"
+    else
+      ""
+    end
+  end
+
 end
 
 app = App.new
@@ -109,3 +117,4 @@ app.select_entree
 app.select_side_dish1
 app.select_side_dish2
 app.display_order
+app.lacking_funds
