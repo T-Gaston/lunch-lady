@@ -44,7 +44,7 @@ class App
   def select_entree
     puts "Select 1 entree"
     @entrees.each_with_index do |entree, index|
-      puts ((index + 1).to_s + " " + entree.print_item)
+    puts ((index + 1).to_s + " " + entree.print_item)
     end
     
     entree_input = gets.to_i
@@ -85,6 +85,17 @@ class App
     puts @user_side_dish2.print_item
   end
 
+  def display_order
+    puts "Okay! Here's your order"
+    puts @user_entree.print_item
+    puts @user_side_dish1.print_item
+    puts @user_side_dish2.print_item
+    puts "Your order total is $#{price_total} "
+  end
+
+  def price_total
+    sum=@user_entree.price+@user_side_dish1.price+@user_side_dish2.price
+  end
 
 end
 
@@ -96,3 +107,4 @@ app.select_money
 app.select_entree
 app.select_side_dish1
 app.select_side_dish2
+app.display_order
